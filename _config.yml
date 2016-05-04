@@ -1,0 +1,18 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Getting Math Onto Webpages W3C Community Group
+email: your-email@domain.com
+description: Information from the tools for math on the web today.
+baseurl: ""
+url: "https://w3c.github.io/mathonwebpages" # the base hostname & protocol for your site
+# twitter_username: w3c
+# github_username:  w3c
+
+# Build settings
+markdown: kramdown
