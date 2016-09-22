@@ -28,7 +28,7 @@ Let’s shortly see how some standards do against these criteria:
 
 This section shows the text based syntax of a number of well known math applications. They all show how the quadratic formula looks like in a text format:
 
-![Quadratic formula](/img/quadratic_formula.png)
+![Quadratic formula](https://w3c.github.io/mathonwebpages/img/quadratic_formula.png)
 
 Image source: [Wikipedia](https://www.wikiwand.com/en/Quadratic_equation)
 
