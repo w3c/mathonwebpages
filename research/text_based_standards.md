@@ -103,7 +103,7 @@ The quadratic formula would be represented like:
 
 Maple is a maths application too, but is capable of visually rendering the entered input or results too.
 
-![Maple code example](/img/maple_code_example.jpg)
+![Maple code example](https://w3c.github.io/mathonwebpages/img/maple_code_example.jpg)
 
 Image source: [StackExchange](http://tex.stackexchange.com/questions/66143/maple-package-for-latex)
 
