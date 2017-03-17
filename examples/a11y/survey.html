@@ -15,8 +15,8 @@
 			</div>
 		</div>
 		<div class="container">
-			<h1>Results chart</h1>
-			<table class="table">
+			<h1>Result chart</h1>
+			<table class="table table-bordered">
 				<tbody>
 					<tr>
 						<td/>
@@ -91,20 +91,31 @@
 				</tbody>
 			</table>
 			
-			<h1>default</h1>
-			<h2>image (IMG tag)</h2>
-			<img src="formula1.png" aria-label="1 half"/>
-			<h2>content with aria-label</h2>
-			<div aria-label="1 half">some text</div>
-			<h2>empty content</h2>
-			<span aria-label="1 half" style="display:block;width:2ex;background:grey">&nbsp;</span>
-			<h1>role=math</h1>
-			<h2>image (IMG tag)</h2>
-			<img src="formula1.png" role="math" aria-label="1 half"/>
-			<h2>content</h2>
-			<div role="math">1 half</div>
-			<h2>content with aria-label</h2>
-			<div role="math" aria-label="1 half">some text</div>
+			<h1>Test samples</h1>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">default</div>
+				<div class="panel-body">
+					<h3>image (IMG tag)</h3>
+					<img src="formula1.png" aria-label="1 half"/>
+					<h3>content with aria-label</h3>
+					<div aria-label="1 half">some text</div>
+					<h3>empty content</h3>
+					<span aria-label="1 half" style="display:block;width:2ex;background:grey">&nbsp;</span>
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">role=math</div>
+				<div class="panel-body">
+					<h3>image (IMG tag)</h3>
+					<img src="formula1.png" role="math" aria-label="1 half"/>
+					<h3>content</h3>
+					<div role="math">1 half</div>
+					<h3>content with aria-label</h3>
+					<div role="math" aria-label="1 half">some text</div>
+				</div>
+			</div>
 		<div>
 	</body>
 
