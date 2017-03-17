@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+	<h1>Math formulas in HTML</h1>
+	This section explain some of the difficulties to render formulas using solely HTML and css. We impose a condition that the HTML and css should be used in a natural way avoiding absolute 
+	possitioning of elements and a deep control of the metrics of the fonts.
+	<h2>Baseline alignment</h2>
+	<p>Formula must be propertly aligned by the base line.</p>
+	<div class="example">
+	The sum of <i class="math">x</i> and <i class="math">y</i>. The formula <span class="math"><i>E</i><b>=</b><i>mc</i><sup>2</sup></span>.
+	</div>
+	<p><span class="status">Status.</span> Formulas that are represented as simple text are aligned automatically.</p>
+	<h2>Vertical layout</h2>
+	<p>Vertical layout is needed for fractions and sumations.</p>
+	<div class="example">
+	The formula
+	<span class="math"><i>x</i><b>=</b><b>&minus;</b><span style="vertical-align:1.3ex" class="fraction"><i>x</i><span style="width:2ex;height:1px;background-color:black"></span><span>2</span></span></span>
+	.
+	</div>
+	<br/>
+	<div class="example">
+	<!-- span class="math"><span style="position:relative;top:-2.3ex" class="sum"><span>&infin;</span><span>&sum;</span><span><i>n</i><b>=</b>1</span></span>2<sup>n</sup></span> -->
+	The formula <span class="math"><span style="vertical-align:2.4ex" class="sum"><span>&infin;</span><span>&sum;</span><span><i>n</i><b>=</b>1</span></span>2<sup>n</sup></span>.
+	</div>
+	<p><span class="status">Status.</span> The usage of Flexbox solves partially the problems.</p>
+	<p><span class="missing">Missing feature.</span> The <code>vertical-align</code> style does not works as needed because numerical lenghts have to be specified.</p>
+	
+	<h2>Center alignment</h2>
+	Fractions, the minus sign and equal should be aligned.
+	
+	asf asf asf asf as fas fas fasdf asfd 
+	asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd 
+	asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd 
+	asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd
+	asf asf asf asf as fas fas fasdf asfd asf asf asf asf as fas fas fasdf asfd 
+	</body>
+<html>
