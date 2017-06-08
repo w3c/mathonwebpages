@@ -21,6 +21,12 @@
 	align-items: center;
 }
 
+.math .over {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .math .sum {
 	display: inline-flex;
 	flex-direction: column;
@@ -36,6 +42,24 @@
 
 .math .sum :last-child {
 	font-size: 80%;
+}
+
+.math .stretchy { 
+	display:inline-block;
+	background-color:#c0c0c0
+}
+
+.math .stretchy-vertical-parent {
+	display:inline-block;
+	background-color:#e0e0e0
+}
+
+.math .stretchy-horizontal-parent {
+	background-color:#e0e0e0
+}
+
+.math .subscript-size {
+	font-size: 80%;	
 }
 
 .failed {

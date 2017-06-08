@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -39,7 +39,7 @@
 				The formula <span class="math"><i>x</i><b>+</b><i>y</i></span>.
 				</div>
 			</div>
-			<p><span class="status">Status.</span> The <code>ex</code>, <code>em</code> lengths solves the problem.</p>
+			<p><span class="status">Status.</span> The <code>ex</code>, <code>em</code> lengths solve the problem.</p>
 			<h2>Vertical layout</h2>
 			<p>Vertical layout is needed for fractions and summations.</p>
 			<div class="panel panel-default">
@@ -83,7 +83,35 @@
 			<h2>Stretchy</h2>
 			<p>Some symbols should be stretchable using css. The size will the same of the containing box.</p>
 			
-			<p><span class="missing">Missing feature.</span> The stretchy attribute itself and a good way to control the containing box size.</p>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					The formula is
+					<span class="math">
+						<i>x</i><b>=</b>
+						<span class="stretchy-vertical-parent">
+							<span class="stretchy">(</span>
+							<b>&minus;</b><span style="vertical-align:1.6ex" class="fraction"><i>x</i><span style="width:2ex;height:1px;background-color:black"></span><span>2</span></span>
+							<span class="stretchy">)</span>
+						</span>
+					</span>
+					<br /><br />
+					The formula is
+					<span class="math">
+						<span>2</span><b>+</b>
+						<span class="over stretchy-horizontal-parent">
+							<span>3<b>·</b>4</span>
+							<span class="stretchy" style="display:block;height:6px">
+								<img width="16px" height="6px" style="vertical-align:top" src="bottom_curly_bracket.svg" />
+							</span>
+							<span class="subscript-size">1st</span>
+						</span>
+					</span>
+				</div>
+			</div>
+			
+			<p><span class="status">Status.</span> The stetchy feature is completely missing in css-HTML. In the above example, the light gray box is the parent container of the stetchy parenthesis. The stretchy css-attribute (unexistend in the current spec) will make the symbols (dark gray) expand to the size of the parent, light gray.</p>
+			
+			<p><span class="missing">Missing feature.</span> The stretchy attribute itself that stretches some symbols to the size of the containing box size.</p>
 
 			<h2>&lt;subsup&gt; element</h2>
 
