@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<header>
+		<style>
+		.math {
+			position: relative;
+			color: blue;
+		}
+
+		.math .fraction {
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+			--mat-vertical-align: 1child;
+		}
+		
+		.math .fraction-line {
+			margin-top:-1ex;
+			margin-bottom:-1.3ex;
+			letter-spacing:-0.1ex;
+		}
+		</style>
+	</header>
+	<body>
+		Inline and nested fraction: 
+		<span class="math">
+			<i>x</i>
+			=
+			&minus;
+			<span class="fraction">
+				<span>
+					<i>y</i>
+					+
+					<span class="fraction">
+						<span>
+							<i>p</i><sup>3</sup>
+						</span>
+						<span class="fraction-line">&minus;&minus;&minus;</span>
+						<span>2</span>
+					</span>
+				</span>
+				<span class="fraction-line">&minus;&minus;&minus;&minus;&minus;&minus;&minus;&minus;</span>
+				<span>2</span>
+			</span>
+		</span>
+		<br/>
+		<pre id="debug-output"></pre>
+		<script>
+		function print(o) {
+			document.getElementById('debug-output').innerHTML += o;
+		}
+		
+		function processChildren(elem,depth) {
+			if (elem.nodeType==1) {
+				//for (var j=0;j<depth;j++) print(".");
+				//print(elem.nodeName+":"+elem.nodeType+":"+elem.children.length+"\r");
+				for (var i=0;i<elem.children.length;i++) {
+					processChildren(elem.children[i],depth+1);
+				}
+				var display = window.getComputedStyle(elem).getPropertyValue("display");
+				if (display=="inline-flex") {
+					var va = window.getComputedStyle(elem).getPropertyValue("--mat-vertical-align");
+					if (va.length>0) {
+						var c = elem.children[parseInt(va)];
+						elem.style.verticalAlign = c.offsetTop+"px";
+					}
+				}
+			}
+		}
+		processChildren(document.documentElement,0);
+		</script>
+	</body>
+</html>
