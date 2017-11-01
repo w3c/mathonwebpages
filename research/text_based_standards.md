@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Text based math standards
+# Text-based math standards
 
 ## Context
 
@@ -101,7 +101,7 @@ The quadratic formula would be represented like:
 
 [Maple](http://www.maplesoft.com/)
 
-Maple is a maths application too, but is capable of visually rendering the entered input or results too.
+Maple is a math application too, but is capable of visually rendering the entered input or results.
 
 ![Maple code example](https://w3c.github.io/mathonwebpages/img/maple_code_example.jpg)
 
