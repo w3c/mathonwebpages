@@ -4,6 +4,8 @@ layout: default
 
 # Text based math standards
 
+**Note:** this effort is currently on due to lack of community interest. If you are interested in helping, let us know on GitHub, the mailing list or directly to the CG Chairs.
+
 ## Context
 
 There is a split in the world of maths. On the one side you have math applications which do calculations. These applications typically use a text based standard which is easy for humans to type and easy for machines to parse and evaluate. On the other side you have applications which are about rendering maths for representation on the web or in printed form. This requires a much more rich and flexible standard to allow for all sorts of specific layouts of formulas, think of LaTeX or MathML.
