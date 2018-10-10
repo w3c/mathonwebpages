@@ -2,7 +2,9 @@
 layout: default
 ---
 
-# Text based math standards
+# Text-based math standards
+
+**Note:** this effort is currently on due to lack of community interest. If you are interested in helping, let us know on GitHub, the mailing list or directly to the CG Chairs.
 
 ## Context
 
@@ -22,7 +24,7 @@ Let’s shortly see how some standards do against these criteria:
 - MathML is an XML based format which is great for presenting maths. It’s very flexible but also very verbose. The standard is too large to easily implement support for it in applications, and the standard isn’t very human friendly too.
 - Math applications like Mathematica, Matlab, etc use a text based standard to enter and evaluate maths. This standard is easy to read and edit by humans, is easy to parse, but is not flexible enough to allow for visual representation of formulas.
 - An interesting case is the formula editor of LibreOffice, which is aiming at representation of maths, but has a simple, text based format underneath it which would be easy to parse for calculation purposes.
-- Also Maple is interesting in this regard: it is a math application where you enter text, but it has build in support to visually render entered formulas.
+- Also Maple is interesting in this regard: it is a math application where you enter text, but it has built-in support to visually render entered formulas.
 
 ## Overview
 
@@ -83,9 +85,9 @@ The quadratic formula is represented as:
 
 ### Mathematica, Matlab, Octave, mathjs
 
-[Mathematica website](https://www.wolfram.com/mathematica/)</br>
-[Matlab website](http://www.mathworks.com/index.html?s_tid=gn_loc_drop)</br>
-[Octave website](https://www.gnu.org/software/octave/)</br>
+[Mathematica website](https://www.wolfram.com/mathematica/)<br>
+[Matlab website](http://www.mathworks.com/index.html?s_tid=gn_loc_drop)<br>
+[Octave website](https://www.gnu.org/software/octave/)<br>
 [mathjs website](http://mathjs.org/)
 
 Matlab, Mathematica, and Octave are well known math applications. Mathjs is a math library for browsers and node.js.
@@ -101,7 +103,7 @@ The quadratic formula would be represented like:
 
 [Maple](http://www.maplesoft.com/)
 
-Maple is a maths application too, but is capable of visually rendering the entered input or results too.
+Maple is a math application too, but is capable of visually rendering the entered input or results.
 
 ![Maple code example](https://w3c.github.io/mathonwebpages/img/maple_code_example.jpg)
 
