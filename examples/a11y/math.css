@@ -1,0 +1,188 @@
+body {
+    font-family:Times New Roman;
+    font-size:300%;
+    color: green;
+}
+.math {
+    color:blue;
+}
+
+.mrow {
+    display:inline-flex;
+    flex-direction:row;
+    align-items:baseline;
+}
+.msubsup, .open, .close {
+    display:inline-flex;
+    flex-direction:column;
+    align-self:stretch;
+}
+.mo {
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+.fill {
+    flex-grow:1;
+    align-self:stretch;
+}
+.open {
+    border-left:1px solid blue;
+    border-top:1px solid blue;
+    border-bottom:1px solid blue;
+    width:0.5ex;
+    margin-left:0.4ex;
+}
+.close {
+    border-right:1px solid blue;
+    border-top:1px solid blue;
+    border-bottom:1px solid blue;
+    width:0.5ex;
+    margin-right:0.4ex;
+}
+
+.munder {
+    display:inline-flex;
+    flex-flow:column;
+    text-align:center;
+}
+
+.munder > span:nth-child(2) {
+    font-size: 70%;
+}
+
+.mover > span:nth-child(2) {
+    font-size: 70%;
+}
+
+.mover {
+    display: inline-flex;
+    flex-flow: column-reverse;
+    text-align:center;
+}
+
+.mfrac-under {
+    display:inline-flex;
+    flex-flow:column;
+    text-align:center;
+    margin-bottom:0.1em;
+}
+
+.mfrac-under > span:nth-child(2) {
+    font-size: 70%;
+    line-height: 90%
+}
+
+.mfrac-over > span:nth-child(2) {
+    font-size: 70%;
+    line-height: 90%
+}
+
+.mfrac-over > span:nth-child(1) {
+    line-height: 40%;
+    letter-spacing:-0.5ex;
+    margin-right: 0.5ex;
+    margin-bottom: -0.2ex;
+}
+
+.mfrac-over {
+    display: inline-flex;
+    flex-flow: column-reverse;
+    text-align:center;
+}
+
+.mbigop {
+    font-size: 110%;
+    line-height: 100%
+}
+
+.msubsup > span:nth-child(1) {
+    font-size:70%
+}
+
+.msubsup > span:nth-child(3) {
+    font-size:70%
+}
+
+
+@font-face {
+    font-family: "Conv_brack_sm";
+    src: url("https://www.wiris.net/demo/editor/resources/fonts/brack_sm.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Conv_brackets";
+    src: url("https://www.wiris.net/demo/editor/resources/fonts/brackets.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: MJXc-TeX-size4-Rw;
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff") format("woff"), 
+       url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf") format("opentype");
+}
+    
+.math-vertical-stretchy-open, .math-vertical-stretchy-close {
+    display:inline-flex;
+    flex-direction:column;
+    align-self:stretch;
+
+    -font-family: Arial;
+    -font-family: MJXc-TeX-size4-Rw;
+    font-size: 60%;
+    margin:0px;
+    padding:0px;
+    box-sizing: content-box ;
+    line-height:100%;
+}
+.math-vertical-stretchy-open {
+    margin-right:.2em;
+    text-align:left;
+    vertical-align:stretch;
+}
+
+.math-vertical-stretchy-close {
+    margin-left:.2em;
+    -text-align:right;
+}
+
+.math-vertical-stretchy-top, .math-vertical-stretchy-bottom {
+    font-family: "Conv_brackets";
+    -font-family: MJXc-TeX-size4-Rw;
+}
+
+.math-vertical-stretchy-top {
+    margin-bottom:-0.09em;
+}
+
+.math-vertical-stretchy-bottom {
+    margin-top:-0.08em;
+}
+
+.math-vertical-stretchy-middle {
+    font-family: "Conv_brack_sm";
+    -font-family: MJXc-TeX-size4-Rw;
+    flex-grow:1;
+    align-self:stretch;
+    overflow:hidden;
+}
+
+.math-vertical-stretchy-middle span {
+    transform: scaleY(100);
+    display:block;
+}
+
+.math table {
+    display:inline-block;
+    border-collapse:collapse;
+    font-size:inherit;
+    color:inherit;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.math table td {
+    padding: 0 8px 
+}
+
+.math-matrix {
+    vertical-align:middle;
+}
