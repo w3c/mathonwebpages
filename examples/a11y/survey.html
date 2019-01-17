@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" href="http://getbootstrap.com/assets/css/docs.min.css" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="bs-docs-header">
+			<div class="container">
+				<h1>AT comparison</h1>
+				<div>This page compares the different AT technologies behaviour with respect to aria-label and role=math</div>
+			</div>
+		</div>
+		<div class="container">
+			<h1>Result chart</h1>
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td/>
+						<td/>
+						<th>ChromeVox</th>
+						<th>Narrator (paragrafs)</th>
+						<th>Narrator (items)</th>
+						<th>NVDA</th>
+						<th>JAWS</th>
+						<th>VoiceOver</th>
+					</tr>
+					<tr>
+						<td rowspan="3">default</td>
+						<td>image (IMG tag)</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+					</tr>
+					<tr>
+						<!-- -->
+						<td>content with aria-label</td>
+						<td>reads content, ignores aria-label</td>
+						<td>reads content, ignores aria-label</td>
+						<td>reads content, reads aria-label</td>
+						<td>reads content, ignores aria-label</td>
+						<td>reads content, ignores aria-label</td>
+						<td>reads content, ignores aria-label</td>
+					</tr>
+					<tr>
+						<!-- -->
+						<td>empty content</td>
+						<td>-</td>
+						<td>-</td>
+						<td>reads aria-label</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td rowspan="3">role=math</td>
+						<td>image (IMG tag)</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+						<td>reads aria-label</td>
+					</tr>
+					<tr>
+						<!-- -->
+						<td>content</td>
+						<td>-</td>
+						<td>reads content</td>
+						<td>reads content</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<!-- -->
+						<td>content with aria-label</td>
+						<td>reads aria-label, ignores content</td>
+						<td>reads content, ignores aria-label</td>
+						<td>reads content, reads aria-label</td>
+						<td>reads aria-label, ignores content</td>
+						<td>reads aria-label, ignores content</td>
+						<td>reads aria-label, ignores content</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<h1>Test samples</h1>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">default</div>
+				<div class="panel-body">
+					<h3>image (IMG tag)</h3>
+					<img src="formula1.png" aria-label="1 half"/>
+					<h3>content with aria-label</h3>
+					<div aria-label="1 half">some text</div>
+					<h3>empty content</h3>
+					<span aria-label="1 half" style="display:block;width:2ex;background:grey">&nbsp;</span>
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">role=math</div>
+				<div class="panel-body">
+					<h3>image (IMG tag)</h3>
+					<img src="formula1.png" role="math" aria-label="1 half"/>
+					<h3>content</h3>
+					<div role="math">1 half</div>
+					<h3>content with aria-label</h3>
+					<div role="math" aria-label="1 half">some text</div>
+				</div>
+			</div>
+		<div>
+	</body>
+
+</html>

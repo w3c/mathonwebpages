@@ -1,0 +1,100 @@
+.math {
+	font-family: Times, Times New Roman, serif;
+	color: blue;
+	position: relative;
+}
+
+.math i {
+	margin-left:0.0ex;
+	margin-right:0.0ex;
+}
+
+.math b {
+	font-weight: normal;
+	margin-left:0.4ex;
+	margin-right:0.4ex;
+}
+
+.math .fraction {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	--mat-vertical-align: 1
+}
+
+.math .fraction-small {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 70%;
+}
+
+.math .over {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.math .sum {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 120%;
+	align-content: center;
+}
+
+.math .sum :first-child {
+	font-size: 80%;
+	
+}
+
+.math .sum :last-child {
+	font-size: 80%;
+}
+
+.math .stretchy { 
+	display:inline-block;
+	background-color:#c0c0c0
+}
+
+.math .stretchy-vertical-parent {
+	display:inline-block;
+	background-color:#e0e0e0
+}
+
+.math .stretchy-horizontal-parent {
+	background-color:#e0e0e0
+}
+
+.math .subscript-size {
+	font-size: 80%;	
+}
+
+.math table {
+	display: inline;
+}
+
+.math table td {
+	padding-left: 3px;
+	padding-right: 3px;
+	text-align: center;
+}
+
+.math table.more-table-margin td {
+	padding-left: 6px;
+	padding-right: 6px;
+	vertical-align: baseline;
+}
+
+.failed {
+	border: solid 1px red;
+}
+
+.missing {
+	color: red;
+	font-weight: bold;
+}
+
+.status {
+	font-weight: bold;
+}

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" href="http://getbootstrap.com/assets/css/docs.min.css" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="bs-docs-header">
+			<div class="container">
+			<h1>Math formulas in HTML</h1>
+			<p>
+			This article explain some of the difficulties to render formulas using solely HTML and css. We impose a condition that the HTML and css should be used in a natural. In particular, this means avoiding absolute 
+			positioning of elements and a deep control of the metrics of the fonts. We also avoid any usage of JavaScript.
+			</p>
+			<p>
+			The main objective of this document is to end up with a list of HTML/css improvement recomendations.
+			</p>
+			</div>
+		</div>
+		<div class="container">
+			<div style="color:red">This is working progress</div>
+			<h2>Baseline alignment</h2>
+			<p>Formula must be properly aligned by the base line.</p>
+			<div class="panel panel-default">
+				<div class="panel-body">
+				The sum of <i class="math">x</i> and <i class="math">y</i>. The formula <span class="math"><i>E</i><b>=</b><i>mc</i><sup>2</sup></span>.
+				</div>
+			</div>
+			<p><span class="status">Status.</span> Formulas that are represented as simple text are aligned automatically.</p>
+			<h2>Proportional spacing</h2>
+			<p>Sepecify spacing relative to the size of the font.</p>
+			<div class="panel panel-default">
+				<div class="panel-body">
+				The formula <span class="math"><i>x</i><b>+</b><i>y</i></span>.
+				</div>
+			</div>
+			<p><span class="status">Status.</span> The <code>ex</code>, <code>em</code> lengths solve the problem.</p>
+			<h2>Vertical layout</h2>
+			<p>Vertical layout is needed for fractions and summations.</p>
+			<div class="panel panel-default">
+				<div class="panel-body">
+				The formula
+				<span class="math"><i>x</i><b>=</b><b>&minus;</b><span style="vertical-align:1.6ex" class="fraction"><i>x</i><span style="width:2ex;height:1px;background-color:black"></span><span>2</span></span></span>
+				.
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-body">
+				<!-- span class="math"><span style="position:relative;top:-2.3ex" class="sum"><span>&infin;</span><span>&sum;</span><span><i>n</i><b>=</b>1</span></span>2<sup>n</sup></span> -->
+					The formula <span class="math"><span style="vertical-align:2.9ex" class="sum"><span>&infin;</span><span>&sum;</span><span><i>n</i><b>=</b>1</span></span>2<sup>n</sup></span>.
+				</div>
+			</div>
+			<p><span class="status">Status.</span> The usage of Flexbox solves partially the problems.</p>
+			<p><span class="missing">Missing feature.</span> The <code>vertical-align</code> style does not works as needed because numerical lengths have to be specified.</p>
+			
+			<h2>Center alignment</h2>
+			<p>Fractions, the minus sign and equal should be aligned.</p>
+			<div class="panel panel-default">
+				<div class="panel-body">
+				The formula
+				<span class="math"><i>x</i><b>=</b><b>&minus;</b><span style="vertical-align:1.6ex" class="fraction"><i>x</i><span style="width:2ex;height:1px;background-color:black"></span><span>2</span></span></span>
+				.
+				</div>
+			</div>
+			
+			<p><span class="status">Status.</span> The usage of Flexbox solves partially the problems for fractions. Using well designed fonts for math, sum signs are well aligned with minus signs and equal signs.</p>
+			<p><span class="missing">Missing feature.</span> The <code>vertical-align</code> style does not works as needed because numerical lengths have to be specified.</p>
+			
+			<h2>Vertical fit</h2>
+			<p>Some decorators and accents like arrows, lines and roots requires that some vertical spacing are set to minimum</p>
+			
+			<p><span class="missing">Missing feature.</span> A way to do fitting should exist to independently set uppper and lower fitting.</p>
+			
+			<h2>Horizontal and vertical lines</h2>
+			
+			<p><span class="missing">Missing feature.</span> This could be a particular case of stretchies.</p>
+			
+			<h2>Stretchy</h2>
+			<p>Some symbols should be stretchable using css. The size will the same of the containing box.</p>
+			
+			<div class="panel panel-default">
+				<div class="panel-body">
+					The formula is
+					<span class="math">
+						<i>x</i><b>=</b>
+						<span class="stretchy-vertical-parent">
+							<span class="stretchy">(</span>
+							<b>&minus;</b><span style="vertical-align:1.6ex" class="fraction"><i>x</i><span style="width:2ex;height:1px;background-color:black"></span><span>2</span></span>
+							<span class="stretchy">)</span>
+						</span>
+					</span>
+					<br /><br />
+					The formula is
+					<span class="math">
+						<span>2</span><b>+</b>
+						<span class="over stretchy-horizontal-parent">
+							<span>3<b>·</b>4</span>
+							<span class="stretchy" style="display:block;height:6px">
+								<img width="16px" height="6px" style="vertical-align:top" src="bottom_curly_bracket.svg" />
+							</span>
+							<span class="subscript-size">1st</span>
+						</span>
+					</span>
+				</div>
+			</div>
+			
+			<p><span class="status">Status.</span> The stetchy feature is completely missing in css-HTML. In the above example, the light gray box is the parent container of the stetchy parenthesis. The stretchy css-attribute (unexistend in the current spec) will make the symbols (dark gray) expand to the size of the parent, light gray.</p>
+			
+			<p><span class="missing">Missing feature.</span> The stretchy attribute itself that stretches some symbols to the size of the containing box size.</p>
+
+			<h2>&lt;subsup&gt; element</h2>
+
+			<h2>Multiscripts</h2>
+
+			<h2>Roots and square roots</h2>
+			
+			<h2>Matrices</h2>
+			
+			<div class="panel panel-default">
+				<div class="panel-body">
+					The formula is
+					<span class="math">
+						<i>x</i><b>=</b>
+						<span class="stretchy-vertical-parent">
+							<span class="stretchy">(</span>
+							<table style="vertical-align:0.6ex"><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>1</td></tr></table>
+							<span class="stretchy">)</span>
+						</span>
+					</span>
+					<br/>
+					<br/>
+					The formula is
+					<span class="math">
+						<i>x</i><b>=</b>
+						<span class="stretchy-vertical-parent">
+							<span class="stretchy">(</span>
+							<table class="more-table-margin" style="vertical-align:0.7ex"><tr><td>
+								<i>x</i><b>=</b><b>&minus;</b><span style="vertical-align:3.8ex" class="fraction"><span style="vertical-align:1.6ex" class="fraction-small"><i>x</i><span style="width:2ex;height:1px;background-color:black"></span><span>2</span></span><span style="width:2ex;height:1px;background-color:black"></span><span>5</span></span>
+							</td><td>0</td></tr><tr><td>0</td><td>2<sup>n</sup></td></tr></table>
+							<span class="stretchy">)</span>
+						</span>
+					</span>
+				</div>
+			</div>
+			<p></p>
+		</div>
+		
+	</body>
+<html>

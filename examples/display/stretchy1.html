@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+	<header>
+		<style>
+		.math {
+			position: relative;
+			color: blue;
+		}
+
+		.math .fraction {
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+			--mat-vertical-align: 1child;
+		}
+		
+		.math .fraction-line {
+			margin-top:-1ex;
+			margin-bottom:-1.3ex;
+			letter-spacing:-0.1ex;
+		}
+		
+		.math .open-par {
+			--vertical-stretchy: serif
+		}
+
+		.math .close-par {
+			--vertical-stretchy: serif
+		}
+
+		.math .block {
+			display: inline-block
+		}
+
+		</style>
+	</header>
+	<body>
+		Formula with stretchy: 
+		<span class="math">
+			<i>x</i>
+			=
+			<span class="block">
+				<span class="open-par">[</span>
+					1
+					&minus;
+					<span class="fraction">
+						<span>1</span>
+						<span class="fraction-line">&minus;&minus;</span>
+						<span>2</span>
+					</span>
+				<span class="close-par">]</span>
+			</span>
+		</span>
+		<br/>
+		<pre id="debug-output"></pre>
+		<script>
+		function print(o) {
+			document.getElementById('debug-output').innerHTML += o;
+		}
+		
+		function processVerticalAlign(elem,depth) {
+			if (elem.nodeType==1) {
+				//for (var j=0;j<depth;j++) print(".");
+				//print(elem.nodeName+":"+elem.nodeType+":"+elem.children.length+"\r");
+				for (var i=0;i<elem.children.length;i++) {
+					processVerticalAlign(elem.children[i],depth+1);
+				}
+				var display = window.getComputedStyle(elem).getPropertyValue("display");
+				if (display=="inline-flex") {
+					var va = window.getComputedStyle(elem).getPropertyValue("--mat-vertical-align");
+					if (va.length>0) {
+						var c = elem.children[parseInt(va)];
+						elem.style.verticalAlign = c.offsetTop+"px";
+					}
+				}
+			}
+		}
+		processVerticalAlign(document.documentElement,0);
+
+		function processVerticalStretchy(elem,depth) {
+			if (elem.nodeType==1) {
+				//for (var j=0;j<depth;j++) print(".");
+				//print(elem.nodeName+":"+elem.nodeType+":"+elem.children.length+"\r");
+				for (var i=0;i<elem.children.length;i++) {
+					processVerticalStretchy(elem.children[i],depth+1);
+				}
+				var va = window.getComputedStyle(elem).getPropertyValue("--vertical-stretchy");
+				if (va.length>0) {
+					doVerticalStretchy(elem,va);
+				}
+			}
+		}
+		function doVerticalStretchy(elem,type) {
+			var operator = elem.innerHTML.trim();
+			//elem.style.display="inline-block";
+			var height = elem.parentElement.offsetHeight;
+			if (operator=="[")
+				elem.innerHTML=svgOpenBracket(5,height,true); // "<svg style='vertical-align:bottom' width='0.5ex' height='"+height+"'><line x1='1' y1='0' x2='1' y2='"+height+"' style='stroke:rgb(0,0,255);stroke-width:1'></line></svg>";
+			else
+				elem.innerHTML=svgOpenBracket(5,height,false); // "<svg style='vertical-align:bottom' width='0.5ex' height='"+height+"'><line x1='1' y1='0' x2='1' y2='"+height+"' style='stroke:rgb(0,0,255);stroke-width:1'></line></svg>";
+			elem.style.width="4px";
+		}
+		
+		function svgOpenBracket(width,height,open) {
+			var out;
+			var bottom = height-0.5;
+			var right  = width-0.5;
+			var right2 = width-1;
+			var style1 = "style='stroke:rgb(0,0,255);stroke-width:0.7'"
+			var style2 = "style='stroke:rgb(0,0,255);stroke-width:1.5'"
+			out = "<svg style='vertical-align:bottom' width='"+width+"' height='"+height+"'>";
+			out += "<line x1='0.5' y1='0.5' x2='"+right+"' y2='0.5' "+style1+"></line>";
+			if (open)
+				out += "<line x1='1' y1='0' x2='1' y2='"+height+"' "+style2+"></line>";
+			else
+				out += "<line x1='"+right2+"' y1='0' x2='"+right2+"' y2='"+height+"' "+style2+"></line>";
+			out += "<line x1='0.5' y1='"+bottom+"' x2='"+right+"' y2='"+bottom+"' "+style1+"></line>";
+			out += "</svg>";
+			return out;
+		}
+
+		processVerticalStretchy(document.documentElement,0);
+
+		</script>
+	</body>
+</html>
