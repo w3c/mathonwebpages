@@ -120,3 +120,21 @@ Quadratic formula:
     = (-b + SQRT(b^2 - 4*a*c) / (2 * a)
     = (-b - SQRT(b^2 - 4*a*c) / (2 * a)
 </pre>
+
+
+### MathJSON
+
+A JSON-based format to represent math formulas.
+
+[MathJSON](https://cortexjs.io/math-json/)
+
+The quadratic formula in MathJSON:
+
+```json
+["Equal", "x", [
+   "Divide", 
+   ["PlusMinus", ["Negate", "b"], ["Sqrt", ["Minus", ["Power", "b", 2], ["Multiply", 4, "a", "c"]]]],
+   ["Multiplpy", 2, "a"]
+]]
+
+```
